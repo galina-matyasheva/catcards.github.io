@@ -1,0 +1,328 @@
+@import 'media-queries',
+'base/fonts',
+'base/colors',
+'base/variables',
+'base/mixins',
+'base/base',
+  // Layout
+'layout/header',
+'layout/footer';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+}
+
+h1 {
+  padding-top: 43px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: 'Exo2.0-thin', sans-serif;
+  font-size: 36px;
+  font-weight: 200;
+  color: $white;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+h2, h3 {
+  color: $black;
+}
+
+.body {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  margin: auto;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  line-height: 1.4;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  background-image: url("../images/backgraund.jpg");
+
+  @include max-screen(984px) {
+    display: block;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+  }
+}
+
+section {
+  display: block;
+}
+
+.info-for-cat {
+  width: 100%;
+  max-width: 1200px;
+
+  .card-info-wrapper {
+    margin: 0 auto;
+    color: $white;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    height: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+    align-content: space-around;
+    -webkit-align-content: space-around;
+  }
+}
+
+.card {
+  @include max-screen(959px) {
+  margin-bottom: 25px;
+  }
+}
+
+.card-border {
+  position: relative;
+  width: 320px;
+  height: 482px;
+  background-color: $blue;
+  border-radius: 9px;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+  transition: background-color 300ms ease-in-out;
+  cursor: pointer;
+}
+
+  .card-elem {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 312px;
+    height: 474px;
+    background-color: $grey-light;
+    border-radius: 11px;
+    clip-path: polygon(14.7% 0, 100% 0, 100% 100%, 0 100%, 0 9.7%);
+  }
+
+  .card-top-text {
+    color: $grey-dark;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    transition: color 300ms;
+
+    p {
+      margin: 14px 0 0 44px;
+      font-size: 16px;
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
+  }
+
+  .card-body {
+    position: relative;
+    padding: 5px 45px 24px;
+    display: block;
+    width: 320px;
+    height: 480px;
+    background-repeat: no-repeat;
+    background-position: 54% 141%;
+
+    p {
+      color: $grey-dark;
+      font-weight: 200;
+      font-size: 14px;
+
+      & b {
+        font-weight: 600;
+      }
+    }
+  }
+
+    .circle-info {
+      position: absolute;
+      display: flex;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      justify-content: center;
+      -webkit-justify-content: center;
+      align-items: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      text-align: center;
+      background-color: $blue;
+      color: $white;
+      border-radius: 50%;
+      width: 5rem;
+      height: 5rem;
+      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      z-index: 3;
+      bottom: 3%;
+      right: 4%;
+      font-family: 'Trebuchet MS', sans-serif;
+      line-height: 1;
+      transition: .2s;
+
+      .weight-number {
+        font-size: 42px;
+      }
+
+      .weight-measure {
+        font-size: 21px;
+      }
+    }
+
+    .push-buy {
+      font-size: 13px;
+      color: $white;
+      text-align: center;
+      margin-top: 9px;
+
+      p {
+        margin: 0;
+
+        a {
+          text-decoration: none;
+          border-bottom: 1px dashed $blue;
+          color: $blue;
+        }
+      }
+    }
+
+    .default {
+      .card-border:hover,
+      .card-border:hover .circle-info {
+        background-color: $blue-hover;
+      }
+
+      .card-body {
+        background-image: url("../images/cat.png");
+      }
+    }
+
+    .selected {
+      .card-border {
+        background-color: $red;
+      }
+
+      &.hover .card-border,
+      &.hover .card-border .circle-info {
+        background-color: $red-hover;
+      }
+
+      .card-top-text {
+        color: $grey-dark;
+      }
+
+      &.hover .card-top-text p:first-child {
+        display: none;
+      }
+
+      &.hover .card-top-text p:nth-child(2) {
+        display: block;
+        color: $red;
+      }
+
+      .card-body {
+        background-image: url("../images/cat.png");
+      }
+
+      .circle-info {
+        background-color: $red;
+
+      }
+
+      &.hover .circle-info {
+        background-color: $red;
+      }
+    }
+
+    .switched-off {
+      .card-border {
+        background-color: $switched-color;
+      }
+
+      .card-top-text {
+        color: $switched-color;
+      }
+
+      .card-body {
+        background-image: url("../images/cat-transp.png");
+      }
+
+      .card-body > * {
+        color: $switched-color;
+      }
+
+      .circle-info {
+        background-color: $switched-color;
+      }
+
+      .push-buy p:last-child {
+        color: $yellow;
+      }
+    }
+
+
+
+
+
+
+
+
