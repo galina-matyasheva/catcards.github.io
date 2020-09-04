@@ -1,0 +1,29 @@
+@import '../fonts/stylesheet.css';
+
+
+$trebuchet: 'Trebuchet MS';
+$exo2: 'Exo2.0-Thin';
+
+@mixin font-family($font) {
+  font-family: $font, sans-serif;
+}
+
+@mixin montserrat($weight:200, $style:normal) {
+  @include font-family ($trebuchet, $exo2);
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@font-face {
+  font-family: 'Exo2.0-thin';
+  src: url('/assets/fonts/Exo2.0-Thin.otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('/assets/fonts/trebuchetMS.ttf');
+  font-weight: normal;
+}
+
+
